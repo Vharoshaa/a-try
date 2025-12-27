@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Love Story</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="sakura-petals">
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+
+
+
+
+
+
+        
+
+
+
+
+
+    </div>
+    <!-- Hamburger Menu -->
+    <div class="hamburger-menu">
+        <div class="hamburger-icon" onclick="toggleHamburgerMenu()">☰</div>
+        <div class="hamburger-dropdown" id="hamburger-dropdown">
+            <div class="hamburger-option" onclick="enableTextsEdit()">Edit Texts</div>
+            <div class="hamburger-option" onclick="enableMediaEdit()">Edit Media</div>
+            <div class="hamburger-option" onclick="enableNotesEdit()">Edit Notes</div>
+            <div class="hamburger-option" onclick="enableImagesEdit()">Edit Images</div>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Intro/Welcome Page -->
+        <section id="intro" class="section intro-section">
+            <div class="heart-decoration">❤️</div>
+            <h1>Welcome to Our Love Story, My Beautiful [Her Name]!</h1>
+            <p>This is where it all started… with a spark that turned into forever.</p>
+            <img src="https://via.placeholder.com/300x200/ff69b4/ffffff?text=Pink+Flowers" alt="Pink Flowers" class="intro-image">
+            <img src="adorable-orange-tabby-cat-sleeping-peacefully-paws-folded-serene-expression-cute-pet-free-png.webp" alt="Cute Sleeping Cat" class="cat-icon" style="width: 100px; height: 100px;">
+            <div class="floating-flowers">
+                <span class="flower-float">🌸</span>
+                <span class="flower-float">🌺</span>
+                <span class="flower-float">🌻</span>
+            </div>
+        </section>
+
+        <!-- How You Met -->
+        <section id="story" class="section story-section">
+            <h2>How We Met</h2>
+            <p>It all began on a bus, heading home for the festival. I was nervous, quiet… but then I saw you. I started talking and never stopped, all because I couldn’t stop thinking about how beautiful you were and how comfortable I felt around you. That bus ride changed my life forever.</p>
+            <img src="https://via.placeholder.com/400x200/ffb6c1/ffffff?text=Romantic+Bus+Ride" alt="Romantic Bus Ride" class="story-image">
+            <div class="quote">"The moment I met you, I knew my life would never be the same."</div>
+        </section>
+
+        <!-- Special Moments -->
+        <section id="memories" class="section memories-section">
+            <h2>Special Moments</h2>
+            <p>Click on a flower to reveal a cherished memory:</p>
+            <div class="memory-box">
+                <div class="flower" onclick="showMemory(1)">🌸</div>
+                <div class="flower" onclick="showMemory(2)">🌺</div>
+                <div class="flower" onclick="showMemory(3)">🌻</div>
+                <div class="flower" onclick="showMemory(4)">🌹</div>
+            </div>
+            <div id="memory-popup" class="popup">
+                <p id="memory-text"></p>
+                <button onclick="closePopup()" class="close-btn">Close ❤️</button>
+            </div>
+        </section>
+
+        <!-- Memories Section -->
+        <section id="gallery" class="section gallery-section">
+            <h2>Our Cherished Memories</h2>
+            <div class="filter-controls">
+                <input type="date" id="memory-date-filter" class="filter-input">
+                <input type="text" id="memory-topic-filter" placeholder="Filter by topic..." class="filter-input">
+                <button onclick="filterMemories()" class="filter-btn">Filter 🔍</button>
+            </div>
+            <div class="upload-controls">
+                <input type="date" id="memory-date" class="upload-input" required>
+                <input type="text" id="memory-topic" placeholder="Topic (e.g., Date Night)" class="upload-input" required>
+                <input type="file" id="memory-file" accept="image/*,video/*" class="upload-input" required>
+                <button onclick="addMemory()" class="upload-btn">Add Memory 📸</button>
+            </div>
+            <div id="gallery-grid" class="gallery-grid">
+                <!-- Memories will be displayed here -->
+            </div>
+            <div class="floating-hearts">
+                <span class="heart-float">💖</span>
+                <span class="heart-float">💕</span>
+                <span class="heart-float">💗</span>
+            </div>
+        </section>
+
+        <!-- Notes Section -->
+        <section id="notes" class="section notes-section">
+            <h2>Our Love Notes</h2>
+            <div class="filter-controls">
+                <input type="date" id="note-date-filter" class="filter-input">
+                <button onclick="filterNotes()" class="filter-btn">Filter by Date 🔍</button>
+            </div>
+            <div class="notes-form">
+                <input type="date" id="note-date" class="note-input" required>
+                <textarea id="note-text" placeholder="Write your loving note here..." class="note-textarea" required></textarea>
+                <button onclick="addNote()" class="add-note-btn">Add Note 💌</button>
+            </div>
+            <div id="notes-display" class="notes-display">
+                <!-- Notes will be displayed here -->
+            </div>
+            <div class="floating-flowers-notes">
+                <span class="flower-float-notes">🌸</span>
+                <span class="flower-float-notes">🌺</span>
+                <span class="flower-float-notes">🌻</span>
+            </div>
+        </section>
+
+        <!-- Personalized Message -->
+        <section id="message" class="section">
+            <h2>A Personalized Message</h2>
+            <button onclick="revealMessage()" class="reveal-btn">Click to Reveal</button>
+            <p id="love-message" class="hidden">No matter what happens, I want you to always remember this—every moment spent with you is a moment I treasure deeply. I love you more than words can say.</p>
+        </section>
+
+        <!-- Cute Cat Animation -->
+        <div id="cat-animation" class="cat">
+            <img src="adorable-orange-tabby-cat-sleeping-peacefully-paws-folded-serene-expression-cute-pet-free-png.webp" alt="Walking Cat" style="width: 60px; height: 60px;">
+        </div>
+
+        <!-- Final Touches -->
+        <section id="future" class="section future-section">
+            <h2>Our Future Together</h2>
+            <button onclick="showFuture()" class="future-btn">Click to See What the Future Holds…</button>
+            <p id="future-text" class="hidden">More adventures await, my love! Endless laughter, cozy nights, and a lifetime of happiness together. I can't wait to create more memories with you. 🌟</p>
+            <div class="sparkles">✨🌟✨</div>
+        </section>
+    </div>
+    <!-- Modal for viewing media -->
+    <div id="media-modal" class="modal">
+        <span class="close-modal" onclick="closeModal()">&times;</span>
+        <div class="modal-content">
+            <img id="modal-img" class="modal-media" style="display:none;">
+            <video id="modal-video" class="modal-media" controls style="display:none;"></video>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
